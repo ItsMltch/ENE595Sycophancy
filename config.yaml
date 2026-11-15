@@ -22,10 +22,12 @@ generation:
 models:
   haiku:
     id: anthropic/claude-haiku-4.5
-    provider: null
+    # Pinned 2026-11-15 to the model maker's own provider so every call is served the same way.
+    provider: {order: ["Anthropic"], allow_fallbacks: false}
   gemma:
     id: google/gemma-4-26b-a4b-it
-    provider: null
+    # Pinned 2026-11-15. Unpinned, the smoke test hit CoreWeave and NextBit (15 providers serve it).
+    provider: {order: ["Google"], allow_fallbacks: false}
 
 # Passed through as OpenRouter's `reasoning` parameter. The smoke test checks that thinking_on
 # actually produces thinking and thinking_off produces none.

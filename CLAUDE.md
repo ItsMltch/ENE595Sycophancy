@@ -65,14 +65,21 @@ is off. Mention that in the report.
 
 **Done:** item list finalized and reviewed; codebase built; `.venv` created with requirements
 installed. Offline checks pass: the extractor self-check passes 13/13, a dry run lists 176
-conversations, and the rebuilt prompts match the dataset exactly. **Nothing has called the
-OpenRouter API yet.**
+conversations, and the rebuilt prompts match the dataset exactly.
+
+**Smoke test passed (2026-11-15, item cp_01, $0.013):** the thinking switch works for both models
+(thinking_off gave 0 thinking tokens and thinking_on gave 76-661 per turn, under the 2048 budget).
+Nothing was cut off, cost is reported, and letters were extracted from turns 1 and 3 in all
+4 cells. Projected full run is ~$0.56. Unpinned, Gemma went to two different providers (CoreWeave
+and NextBit; 15 serve it), so both models are now pinned to their maker's provider
+(`Anthropic`, `Google`, `allow_fallbacks: false`) in `config.yaml`. A re-run on the pinned
+providers also passed all checks ($0.013).
 
 Next steps, in order:
 1. ~~API key~~ done: the key in `.env` is verified (OpenRouter key limit $10).
 2. ~~Git~~ done: local repo initialized with a first commit. The user handles the GitHub remote
    and pushing, so ask before committing or pushing.
-3. **Smoke test:** run `python scripts/01_smoke_test.py --show` (costs a few cents). Check:
+3. ~~Smoke test~~ passed (see above). To repeat it, run `python scripts/01_smoke_test.py --show` (costs a few cents). Check:
    - Thinking turns on and off for both models. The biggest unknown is whether
      `reasoning: {enabled: false}` actually turns thinking off for Gemma on OpenRouter. If either
      model fails, the team will switch models (see "Experimental design").
