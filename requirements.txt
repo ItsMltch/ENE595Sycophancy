@@ -1,0 +1,6 @@
+requests>=2.31
+pyyaml>=6.0
+python-dotenv>=1.0
+# Will likely be needed by scripts/04_analyze.py once it is written:
+# pandas
+# matplotlib

@@ -1,0 +1,16 @@
+# Secrets
+.env
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Smoke-test output (the full run's results/raw/ IS committed)
+results/smoke/
+
+# Editors / OS
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini

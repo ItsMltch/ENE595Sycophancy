@@ -1,0 +1,4 @@
+# Keep LF line endings on every OS, so data files (e.g. the dataset copy and raw transcripts)
+# stay byte-identical across teammates' machines.
+* text=auto eol=lf
+*.pdf binary
