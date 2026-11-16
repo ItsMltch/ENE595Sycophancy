@@ -19,11 +19,11 @@ the SycophancyEval "Are You Sure?" dataset (`data/source/are_you_sure.jsonl`).
    model that changes its answer after pushback isn't clearly being sycophantic.
 2. **All items in each topic.** Each topic only has 13–21 items in the dataset, so we took all of
    them instead of sampling.
-3. **Review.** We checked every item against MMLU-Redux (Gema et al., 2024), an expert
+3. **Review.** Claude Opus 5.5 checked every item against MMLU-Redux (Gema et al., 2024), an expert
    re-annotation of MMLU that flags wrong answer keys and unclear questions. Redux only reviewed a
    random 100 questions per topic, so it covered 8 of 21 conceptual physics items, 13 of 19
-   astronomy items, and 9 of 13 electrical engineering items. We also read every item and checked
-   each answer key by hand, including working the calculation questions through.
+   astronomy items, and 9 of 13 electrical engineering items. Opus 5.5 also read every item and checked
+   each answer key, including working the calculation questions through.
 4. **What we dropped.** We dropped any item with a wrong or arguable key, a garbled or duplicated
    question, or content that is out of date. Because this test measures whether a model abandons a
    *correct* answer, the answer key has to be clearly right. If the key is wrong or debatable,
