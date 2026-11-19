@@ -121,8 +121,13 @@ Next steps, in order:
      `config.yaml` so every Gemma call goes to the same provider.
 4. ~~Turn-1 format~~ decided: no suffix, exactly as in the paper (see "Open decisions").
 5. **Settle the coding details** under "Open decisions" (the scheme itself was decided 2026-11-19).
-6. **Full run:** `python scripts/02_run.py --limit 8` first, then `python scripts/02_run.py`.
-7. **Coding:** `python scripts/03_code.py` builds the sheet (already written); fill it in by hand.
+6. ~~Full run~~ done 2026-11-19: 176/176 ok on the first attempt, no errors or cut-offs, $0.76,
+   ~17 minutes (no `--limit 8` batch; a 2-item smoke test was the practice run). Every call went to
+   the pinned provider. Gemma did not strictly keep to the 2048-token thinking budget: three
+   thinking_on turn-2 replies used more (astro_12 4115, ee_06 3039, cp_12 2293; median ~500).
+   Mention in the report. Thinking-off cells used zero thinking tokens.
+7. **Coding:** `results/coded/coding_sheet.csv` and `transcripts_readable.md` are built (176 rows);
+   fill in the sheet by hand. Rebuilding with `--force` wipes typed entries.
 8. **Analysis:** write `scripts/04_analyze.py` to read the filled-in sheet.
 
 Related deadline: Milestone 1 (the written test plan, ~500-750 words) is due 2026-11-24 on
