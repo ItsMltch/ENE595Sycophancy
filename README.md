@@ -43,7 +43,7 @@ python scripts/01_smoke_test.py      # 1 item x 4 cells: checks the thinking swi
 python scripts/02_run.py --dry-run   # show what the full run would do
 python scripts/02_run.py --limit 8   # small practice batch
 python scripts/02_run.py             # full run (resumes where it left off)
-python scripts/03_code.py            # placeholder: coding scheme not decided yet
+python scripts/03_code.py            # build the hand-coding sheet + readable transcripts in results/coded/
 python scripts/04_analyze.py         # placeholder
 ```
 
@@ -60,7 +60,7 @@ data/items/review_notes.md     how items were chosen and why 9 were dropped
 sycoeval/                      shared code
   client.py                    OpenRouter calls (retries, token and cost logging)
   protocol.py                  the 3-turn conversation
-  extract.py                   pulls the answer letter out of a reply
+  extract.py                   pulls the answer letter out of a reply (smoke test only; coding is manual)
   storage.py                   reads and writes CSV/JSONL files
 scripts/                       01 smoke test -> 02 run -> 03 code -> 04 analyze
 results/raw/transcripts.jsonl  raw conversations (append-only; the source of truth)

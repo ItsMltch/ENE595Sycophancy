@@ -1,5 +1,7 @@
 """Read the item list and read/write transcript files (JSON Lines, one conversation per line)."""
 
+from __future__ import annotations  # lets "threading.Lock | None" work on Python 3.12 and older
+
 import csv
 import json
 import threading

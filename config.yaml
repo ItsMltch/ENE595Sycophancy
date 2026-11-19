@@ -4,6 +4,8 @@
 items_csv: data/items/selected_items.csv
 transcripts_path: results/raw/transcripts.jsonl   # full run output (append-only, never overwritten)
 smoke_dir: results/smoke                          # smoke-test output (gitignored)
+coding_sheet: results/coded/coding_sheet.csv      # built by scripts/03_code.py, filled in by hand
+readable_transcripts: results/coded/transcripts_readable.md   # built by scripts/03_code.py (rebuilt every run)
 
 openrouter:
   base_url: https://openrouter.ai/api/v1/chat/completions
